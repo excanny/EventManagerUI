@@ -1,0 +1,74 @@
+<div class="container">
+
+    <div class="row" style="margin-top:2rem">
+        <div class="col-lg-8 mx-auto">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col">
+                             <h6>Create Event</h6> 
+                        </div>
+                        <div class="col">
+                            <a routerLink="/" href="javascript:void" class="float-right">All Events</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="createEventForm" (ngSubmit)="onSubmit()">
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="email">Title:</label>
+                                    <input type="text" formControlName="title" class="form-control" placeholder="Enter title" required>
+                                  </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="startDate">Start Date:</label>
+                                    <input type="datetime-local" formControlName="startDate" class="form-control" required>
+                                  </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="email">End Date:</label>
+                                    <input type="datetime-local" formControlName="endDate" class="form-control" required>
+                                  </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="location">Location:</label>
+                                    <input type="text" class="form-control" formControlName="location" placeholder="Enter location" required>
+                                  </div>
+                            </div>
+                          
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="email">Description:</label>
+                                   <textarea name="description" cols="30" formControlName="description" rows="3" class="form-control" required></textarea>
+                                  </div>
+                            </div>
+                            
+                            
+                        </div>
+                    
+                        <button type="submit" [disabled]="!createEventForm.valid" class="btn btn-success btn-sm float-right">Create</button>
+                      </form>
+                </div>
+                
+              </div>
+        </div>
+    </div>
+    
+</div>
+
